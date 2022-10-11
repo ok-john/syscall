@@ -306,32 +306,32 @@ pub const SYS_PRLIMIT64: u64 = 302;
 
 /// The single letters are the abbreviations
 /// used by the String method's formatting.
-pub const MODE_DIR: u64 = 1 << (32 - 1);
 /// d: is a directory
-pub const MODE_APPEND: u64 = (1 << (32 - 1)) + 1;
+pub const MODE_DIR: u64 = 1 << (32 - 1);
 /// a: append-only
-pub const MODE_EXCLUSIVE: u64 = (1 << (32 - 1)) + 2;
+pub const MODE_APPEND: u64 = (1 << (32 - 1)) + 1;
 /// l: exclusive use
-pub const MODE_TEMPORARY: u64 = (1 << (32 - 1)) + 3;
+pub const MODE_EXCLUSIVE: u64 = (1 << (32 - 1)) + 2;
 /// T: temporary file; Plan 9 only
-pub const MODE_SYMLINK: u64 = (1 << (32 - 1)) + 4;
+pub const MODE_TEMPORARY: u64 = (1 << (32 - 1)) + 3;
 /// L: symbolic link
-pub const MODE_DEVICE: u64 = (1 << (32 - 1)) + 5;
+pub const MODE_SYMLINK: u64 = (1 << (32 - 1)) + 4;
 /// D: device file
-pub const MODE_NAMED_PIPE: u64 = (1 << (32 - 1)) + 6;
+pub const MODE_DEVICE: u64 = (1 << (32 - 1)) + 5;
 /// p: named pipe (FIFO)
-pub const MODE_SOCKET: u64 = (1 << (32 - 1)) + 7;
+pub const MODE_NAMED_PIPE: u64 = (1 << (32 - 1)) + 6;
 /// S: Unix domain socket
-pub const MODE_SETUID: u64 = (1 << (32 - 1)) + 8;
+pub const MODE_SOCKET: u64 = (1 << (32 - 1)) + 7;
 /// u: setuid
-pub const MODE_SETGID: u64 = (1 << (32 - 1)) + 9;
+pub const MODE_SETUID: u64 = (1 << (32 - 1)) + 8;
 /// g: setgid
-pub const MODE_CHAR_DEVICE: u64 = (1 << (32 - 1)) + 10;
+pub const MODE_SETGID: u64 = (1 << (32 - 1)) + 9;
 /// c: Unix character device, when ModeDevice is set
-pub const MODE_STICKY: u64 = (1 << (32 - 1)) + 11;
+pub const MODE_CHAR_DEVICE: u64 = (1 << (32 - 1)) + 10;
 /// t: sticky
-pub const MODE_IRREGULAR: u64 = (1 << (32 - 1)) + 12;
+pub const MODE_STICKY: u64 = (1 << (32 - 1)) + 11;
 /// ?: non-regular file; nothing else is known about this file
+pub const MODE_IRREGULAR: u64 = (1 << (32 - 1)) + 12;
 /// Mask for the type bits. For regular files, none will be set.
 pub const MODE_TYPE: u64 = MODE_DIR
     | MODE_SYMLINK

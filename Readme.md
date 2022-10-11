@@ -10,12 +10,11 @@ pub fn syscall_6(syscall: u64, arg1: u64, arg2: u64, arg3: u64, arg4: u64, arg5:
 ```
 ## Example
 
-Opening a file, writing to it, closing the file.
-
 ```rust
 let path = "test-3.file".to_string();
 let data = b"you look beautiful today";
 
+// Create & open a new file.
 let fd = syscall_3(
         syscalls::SYS_OPEN,
         path.as_ptr() as u64,
@@ -23,6 +22,7 @@ let fd = syscall_3(
         syscalls::MODE_PERM,
     );
 
+// Write to it.
 syscall_3(
     syscalls::SYS_WRITE,
     fd as u64,
@@ -30,6 +30,7 @@ syscall_3(
     data.len() as u64,
 );
 
+// Close the file.
 syscall_3(
     syscalls::SYS_CLOSE, 
     fd as u64, 
